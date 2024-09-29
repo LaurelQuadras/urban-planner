@@ -29,7 +29,7 @@ export default function LoginDrawer({ toggleDrawer }: LoginDrawerProps) {
       <Box className="login-drawer" role="presentation">
         <div className="login-drawer-info">
           <div
-            onClick={toggleDrawer(false)}
+            onClick={() => toggleDrawer(false)}
             className="login-drawer-info-close-icon"
           >
             <Close />

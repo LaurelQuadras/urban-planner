@@ -1,6 +1,6 @@
 import { Star } from "@mui/icons-material";
+import { ServicesOffered } from "app/types/ServicesOffered";
 import Image from "next/image";
-import { ServicesOffered } from "../page";
 
 export interface ServicesAdvertisementProps {
   servicesOfferedList: ServicesOffered[];

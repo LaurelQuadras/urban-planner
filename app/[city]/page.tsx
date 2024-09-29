@@ -3,6 +3,7 @@ import "../../styles/global.scss";
 import { Divider } from "@mui/material";
 import CityServices from "./components/cityservices";
 import ServicesAdvertisement from "./components/servicesadvertisement";
+import { ServicesOffered } from "app/types/ServicesOffered";
 
 type Params = {
   params: {
@@ -14,14 +15,7 @@ export async function generateMetadata({ params }: Params) {
   return { title: `${params.city}` };
 }
 
-export type ServicesOffered = {
-  productUrl: string;
-  productText: string;
-  productRating?: string;
-  productCost?: string;
-};
-
-export const ServicesOfferedList: ServicesOffered[] = [
+const ServicesOfferedList: ServicesOffered[] = [
   {
     productUrl: "/images/power-saver-ac-service.png",
     productText: "Power saver AC service",
@@ -54,7 +48,7 @@ export const ServicesOfferedList: ServicesOffered[] = [
   },
 ];
 
-export const MoreServicesList: ServicesOffered[] = [
+const MoreServicesList: ServicesOffered[] = [
   {
     productUrl: "/images/facial-and-cleanup.png",
     productText: "Facial & Cleanup",
