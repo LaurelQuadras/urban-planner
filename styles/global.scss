@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./topnavigation.scss";
+@import "./locationsection.scss";
+@import "./whyussection.scss";
+@import "./servicesoffered.scss";
+@import "./logindrawer.scss";
+
+@import "./city/topnavigation.scss";
+@import "./city/cityservices.scss";
+@import "./city/servicesadvertisement.scss";

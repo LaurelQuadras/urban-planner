@@ -1,0 +1,31 @@
+.services-offered {
+  padding: 5rem 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &-generic-text {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    &-button {
+      background-color: #f5f9ff;
+      padding: 0.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 1px 1px 1px 0px #e3e3e3;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #e5e9ee;
+      }
+    }
+  }
+}

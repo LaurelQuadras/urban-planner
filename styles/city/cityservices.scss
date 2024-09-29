@@ -1,0 +1,105 @@
+.city-services {
+  padding: 2rem 4rem;
+  display: flex;
+
+  &-services {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 3rem;
+    width: 50%;
+
+    &-text {
+      font-size: 36px;
+      line-height: 44px;
+      color: rgb(15, 15, 15, 1);
+      font-weight: 600;
+      text-align: left;
+    }
+
+    &-looking-for {
+      padding: 1.5rem;
+      border: 1px solid rgb(224, 218, 218);
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      &-text {
+        font-size: 20px;
+        line-height: 28px;
+        color: rgb(84, 84, 84, 1);
+        font-weight: 600;
+        text-align: left;
+      }
+
+      &-functionality {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        &-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          &-services {
+            background-color: rgb(245, 245, 245, 1);
+            height: 6rem;
+            width: 10rem;
+            border: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            &-text {
+              font-size: 12px;
+              line-height: 16px;
+              color: rgb(15, 15, 15, 1);
+              font-weight: 400;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    &-stats {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      margin: 2rem 4.5rem;
+
+      &-rating {
+        display: flex;
+        gap: 2rem;
+
+        &-number {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+
+          &-rating {
+            font-size: 20px;
+            line-height: 28px;
+            color: rgb(15, 15, 15, 1);
+            font-weight: 600;
+          }
+
+          &-text {
+            font-size: 14px;
+            line-height: 24px;
+            color: rgb(84, 84, 84, 1);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  &-photo {
+    padding: 1rem;
+  }
+}

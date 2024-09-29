@@ -1,0 +1,26 @@
+.top-navigation {
+  width: 100%;
+  height: 3.7rem;
+  background-color: black;
+
+  &-margin {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 12rem;
+  }
+
+  &-buttons {
+    &-button {
+      color: white;
+      text-transform: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        color: white;
+      }
+    }
+  }
+}

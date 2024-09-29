@@ -1,0 +1,38 @@
+.login-drawer {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+
+  &-info {
+    display: flex;
+    gap: 1rem;
+
+    &-close-icon {
+      cursor: pointer;
+    }
+
+    &-text {
+      line-height: 24px;
+      font-size: 16px;
+      color: #212121;
+      font-weight: 500;
+    }
+  }
+
+  &-content {
+    display: flex;
+    padding: 1rem;
+
+    &-dropdown {
+      font-size: 14px;
+    }
+  }
+
+  &-continue-button {
+    background-color: #212121;
+    color: white;
+    margin: 0rem 1rem;
+  }
+}
