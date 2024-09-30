@@ -16,7 +16,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.79.4",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "video.js": "^8.17.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.1.5",

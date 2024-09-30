@@ -2,15 +2,17 @@
 
 import { Button, Drawer } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import LoginDrawer from "./logindrawer";
 
 export default function TopNavigation() {
   const [open, setOpen] = useState(false);
 
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
+  const toggleDrawer =
+    (newOpen: boolean): MouseEventHandler<HTMLButtonElement> =>
+    () => {
+      setOpen(newOpen);
+    };
 
   return (
     <div className="top-navigation">
@@ -22,16 +24,16 @@ export default function TopNavigation() {
           height="140"
         />
         <div className="top-navigation-buttons">
-          <Button className="top-navigation-buttons-button">
+          <button className="top-navigation-buttons-button">
             Register as a Professional
-          </Button>
-          <Button className="top-navigation-buttons-button">Help</Button>
-          <Button
+          </button>
+          <button className="top-navigation-buttons-button">Help</button>
+          <button
             className="top-navigation-buttons-button"
             onClick={toggleDrawer(true)}
           >
             Login/Sign Up
-          </Button>
+          </button>
           <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
             <LoginDrawer toggleDrawer={toggleDrawer} />
           </Drawer>

@@ -10,10 +10,10 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 
 export type LoginDrawerProps = {
-  toggleDrawer: (value: boolean) => void;
+  toggleDrawer: (value: boolean) => MouseEventHandler<HTMLButtonElement>;
 };
 
 export default function LoginDrawer({ toggleDrawer }: LoginDrawerProps) {
@@ -28,12 +28,12 @@ export default function LoginDrawer({ toggleDrawer }: LoginDrawerProps) {
     <div>
       <Box className="login-drawer" role="presentation">
         <div className="login-drawer-info">
-          <div
-            onClick={() => toggleDrawer(false)}
+          <button
+            onClick={toggleDrawer(false)}
             className="login-drawer-info-close-icon"
           >
             <Close />
-          </div>
+          </button>
           <span className="login-drawer-info-text">
             Please login to continue
           </span>

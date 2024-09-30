@@ -4,6 +4,7 @@ import { Divider } from "@mui/material";
 import CityServices from "./components/cityservices";
 import ServicesAdvertisement from "./components/servicesadvertisement";
 import { ServicesOffered } from "app/types/ServicesOffered";
+import BottomFooter from "app/components/bottomfooter";
 
 type Params = {
   params: {
@@ -48,7 +49,7 @@ const ServicesOfferedList: ServicesOffered[] = [
   },
 ];
 
-const MoreServicesList: ServicesOffered[] = [
+const SalonForWomenList: ServicesOffered[] = [
   {
     productUrl: "/images/facial-and-cleanup.png",
     productText: "Facial & Cleanup",
@@ -71,6 +72,25 @@ const MoreServicesList: ServicesOffered[] = [
   },
 ];
 
+const ACApplicanceRepair: ServicesOffered[] = [
+  {
+    productUrl: "/images/ac-and-service-repair.png",
+    productText: "AC and Service Repair",
+  },
+  {
+    productUrl: "/images/washing-machine-repair.png",
+    productText: "Washing Machine Repair",
+  },
+  {
+    productUrl: "/images/refrigerator-repair.png",
+    productText: "Refrigerator Repair",
+  },
+  {
+    productUrl: "/images/water-purifier-repair.png",
+    productText: "Water Purifier Repair",
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -83,8 +103,13 @@ export default function Page() {
       />
       <ServicesAdvertisement
         servicesName="Salon for Women"
-        servicesOfferedList={MoreServicesList}
+        servicesOfferedList={SalonForWomenList}
       />
+      <ServicesAdvertisement
+        servicesName="AC & appliance repair"
+        servicesOfferedList={ACApplicanceRepair}
+      />
+      <BottomFooter />
     </>
   );
 }
