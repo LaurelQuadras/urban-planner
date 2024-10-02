@@ -1,8 +1,14 @@
+@import "../mixins.scss";
+
 .services-advertisement {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2rem 8rem;
+
+  @include mobile {
+    padding: 1rem;
+  }
 
   &-text {
     font-size: 36px;
@@ -10,6 +16,10 @@
     color: rgb(15, 15, 15, 1);
     font-weight: 600;
     text-align: left;
+
+    @include mobile {
+      text-align: center;
+    }
   }
 
   &-carousel {
@@ -17,11 +27,20 @@
     gap: 1rem;
     margin-top: 1rem;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     &-card {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       cursor: pointer;
+
+      @include mobile {
+        width: 100%;
+        align-items: center;
+      }
 
       &-image {
         border-radius: 0.5rem;

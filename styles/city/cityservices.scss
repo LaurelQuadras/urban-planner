@@ -1,6 +1,13 @@
+@import "../mixins";
+
 .city-services {
   padding: 2rem 4rem;
   display: flex;
+
+  @include mobile {
+    padding: 1rem;
+    flex-direction: column;
+  }
 
   &-services {
     display: flex;
@@ -9,12 +16,21 @@
     padding: 1rem 3rem;
     width: 50%;
 
+    @include mobile {
+      width: 100%;
+      padding: 0rem;
+    }
+
     &-text {
       font-size: 36px;
       line-height: 44px;
       color: rgb(15, 15, 15, 1);
       font-weight: 600;
       text-align: left;
+
+      @include mobile {
+        text-align: center;
+      }
     }
 
     &-looking-for {
@@ -31,12 +47,20 @@
         color: rgb(84, 84, 84, 1);
         font-weight: 600;
         text-align: left;
+
+        @include mobile {
+          text-align: center;
+        }
       }
 
       &-functionality {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+
+        @include mobile {
+          justify-content: center;
+        }
 
         &-container {
           display: flex;
@@ -70,6 +94,10 @@
       gap: 2rem;
       justify-content: space-between;
       margin: 2rem 4.5rem;
+
+      @include mobile {
+        margin: 0rem;
+      }
 
       &-rating {
         display: flex;

@@ -1,9 +1,17 @@
+@import "../mixins.scss";
+
 .service-detail-content {
   width: 82%;
   margin: 4rem 0rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @include mobile {
+    width: 100%;
+    align-items: center;
+    margin: 1rem 0rem;
+  }
 
   &-video {
     border-radius: 0.5rem;
@@ -22,6 +30,12 @@
     padding: 2rem;
     display: flex;
     gap: 0.5rem;
+
+    @include mobile {
+      flex-direction: column;
+      margin: 1rem;
+      padding: 1rem;
+    }
 
     &-header-text {
       font-size: 28px;
@@ -130,6 +144,10 @@
 
       &:hover {
         background-color: rgb(248, 246, 246);
+      }
+
+      @include mobile {
+        padding: 0.5rem;
       }
 
       &-positive-count {

@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .top-navigation-city {
   display: flex;
   width: 100%;
@@ -6,6 +8,13 @@
   align-items: center;
   justify-content: space-between;
 
+  @include mobile {
+    padding: 1rem;
+    flex-direction: column;
+    height: fit-content;
+    gap: 1rem;
+  }
+
   &-image {
     height: 2rem;
   }
@@ -13,6 +22,10 @@
   &-textfields {
     display: flex;
     gap: 1rem;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &-functions {

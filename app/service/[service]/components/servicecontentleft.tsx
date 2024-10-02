@@ -55,7 +55,7 @@ export default function ServiceContentLeft() {
           <span className="service-content-left-services-header-text">
             Select a service
           </span>
-          <Divider sx={{ width: "72%" }} />
+          <Divider sx={{ width: "60%" }} />
         </div>
         <div className="service-content-left-services-container">
           {SpecificServicesList.map(

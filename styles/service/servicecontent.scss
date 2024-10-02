@@ -1,4 +1,10 @@
+@import "../mixins.scss";
+
 .service-content {
   display: flex;
   gap: 1rem;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }

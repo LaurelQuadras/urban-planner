@@ -1,3 +1,5 @@
+@import "../mixins.scss";
+
 .services-detail-cart {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,10 @@
   padding: 1rem;
   border-radius: 0.5rem;
   min-width: 50%;
+
+  @include mobile {
+    margin: 0rem;
+  }
 
   &-header {
     font-size: 20px;
