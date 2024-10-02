@@ -1,3 +1,5 @@
+@import "mixins";
+
 .bottom-footer {
   width: 100%;
   height: 20rem;
@@ -5,6 +7,13 @@
   display: flex;
   justify-content: space-between;
   padding: 3rem 10rem;
+
+  @include mobile {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    height: fit-content;
+  }
 
   &-content {
     display: flex;

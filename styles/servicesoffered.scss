@@ -1,8 +1,14 @@
+@import "mixins";
+
 .services-offered {
   padding: 5rem 15rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @include mobile {
+    padding: 1rem;
+  }
 
   &-generic-text {
     font-size: 32px;
@@ -22,6 +28,10 @@
       border-radius: 0.75rem;
       box-shadow: 1px 1px 1px 0px #e3e3e3;
       font-size: 16px;
+
+      @include mobile {
+        width: 100%;
+      }
 
       &:hover {
         background-color: #e5e9ee;

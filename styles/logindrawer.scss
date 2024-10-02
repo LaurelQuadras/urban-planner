@@ -1,3 +1,5 @@
+@import "mixins";
+
 .login-drawer {
   width: 350px;
   display: flex;
@@ -5,12 +7,20 @@
   padding: 1rem;
   gap: 1rem;
 
+  @include mobile {
+    width: 200px;
+  }
+
   &-info {
     display: flex;
     gap: 1rem;
 
     &-close-icon {
       cursor: pointer;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &-text {
@@ -18,12 +28,21 @@
       font-size: 16px;
       color: #212121;
       font-weight: 500;
+
+      @include mobile {
+        color: #646464;
+      }
     }
   }
 
   &-content {
     display: flex;
     padding: 1rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     &-dropdown {
       font-size: 14px;

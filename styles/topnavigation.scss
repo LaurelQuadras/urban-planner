@@ -1,3 +1,5 @@
+@import "mixins";
+
 .top-navigation {
   width: 100%;
   height: 3.7rem;
@@ -9,22 +11,59 @@
     justify-content: space-between;
     align-items: center;
     margin: 0rem 12rem;
+
+    @include mobile {
+      margin: 0rem 0.5rem;
+    }
   }
 
   &-buttons {
     display: flex;
     gap: 1rem;
 
+    @include mobile {
+      display: none;
+    }
+
     &-button {
       color: white;
       text-transform: none;
       font-size: 16px;
 
+      @include mobile {
+        color: black;
+      }
+
       &:hover {
         text-decoration: underline;
         text-underline-offset: 0.5rem;
         color: white;
+
+        @include mobile {
+          color: black;
+        }
       }
+    }
+
+    &-menu {
+      font-size: 16px;
+      color: white;
+    }
+
+    &-drawer {
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    &-mobile-button {
+      color: #646464;
+      text-transform: none;
+      font-size: 16px;
+      display: flex;
+      justify-content: left;
     }
   }
 }
