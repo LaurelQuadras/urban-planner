@@ -32,7 +32,7 @@ export default function ServicesOffered() {
       <span className="services-offered-generic-text">Services Offered</span>
       <div className="services-offered-buttons">
         {servicesOfferedArrayList.map((service: string) => (
-          <button className="services-offered-buttons-button">
+          <button className="services-offered-buttons-button" key={service}>
             {service}
             <KeyboardArrowDownIcon color="secondary" />
           </button>

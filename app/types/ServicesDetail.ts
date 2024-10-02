@@ -1,4 +1,5 @@
 export type ServicesDetail = {
+  id: number;
   headerText: string;
   headerDescription: string;
   rating: string;

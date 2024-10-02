@@ -1,11 +1,15 @@
-import { ServiceDetailValue, ServicesDetail } from "app/types/ServicesDetail";
+"use client";
+
+import { ServicesDetail } from "app/types/ServicesDetail";
 import VideoPlayer from "./videoplayer";
-import { Inventory2, Star } from "@mui/icons-material";
-import { Divider } from "@mui/material";
+import { useState } from "react";
+import ServicesDetailCart from "./servicesdetailcart";
+import ServiceDetailItems from "./servicedetailitems";
 
 export default function ServiceDetailContent() {
   const ServiceDetailList: ServicesDetail[] = [
     {
+      id: 1,
       headerText: "Bestsellers",
       headerDescription: "Grooming essentials",
       rating: "4.88 (932K reviews)",
@@ -26,67 +30,91 @@ export default function ServiceDetailContent() {
         },
       ],
     },
+    {
+      id: 2,
+      headerText: "Bestsellers",
+      headerDescription: "Cut & Color",
+      rating: "4.88 (873K reviews)",
+      price: "$859",
+      time: "60 mins",
+      details: [
+        {
+          key: "Haircut + Hair color",
+          value: "Haircut for men",
+        },
+        {
+          key: "Hair color (Garnier Hair Color)",
+          value: "Garnier colors - Brown black (shade 3)",
+        },
+      ],
+    },
   ];
+
+  const [count, setCount] = useState<number>(0);
+  const [selectedServiceDetailList, setSelectedServiceDetailList] = useState<
+    ServicesDetail[]
+  >([]);
+
+  const incrementAddCount = (serviceDetail: ServicesDetail): void => {
+    setCount((addCount) => addCount + 1);
+    if (!selectedServiceDetailList.includes(serviceDetail)) {
+      const newServiceDetailList: ServicesDetail[] = [
+        ...selectedServiceDetailList,
+        serviceDetail,
+      ];
+      setSelectedServiceDetailList(newServiceDetailList);
+    }
+  };
+
+  const incrementAddCountOnButtonClick = (
+    serviceDetail: ServicesDetail
+  ): void => {
+    if (count === 0) {
+      setCount((addCount) => addCount + 1);
+      if (!selectedServiceDetailList.includes(serviceDetail)) {
+        const newServiceDetailList: ServicesDetail[] = [
+          ...selectedServiceDetailList,
+          serviceDetail,
+        ];
+        setSelectedServiceDetailList(newServiceDetailList);
+      }
+    }
+  };
+
+  const decrementAddCount = (serviceDetail: ServicesDetail): void => {
+    setCount((addCount) => addCount - 1);
+    if (selectedServiceDetailList.includes(serviceDetail)) {
+      const newServiceDetailList: ServicesDetail[] =
+        selectedServiceDetailList.filter(
+          (selectedServiceDetail: ServicesDetail) =>
+            selectedServiceDetail.id === serviceDetail.id
+        );
+      setSelectedServiceDetailList(newServiceDetailList);
+    }
+  };
+
   return (
     <div className="service-detail-content">
       <VideoPlayer videoId="YCuWQjU9-Wk" />
       <div className="service-detail-content-detail">
-        {ServiceDetailList.map((serviceDetail: ServicesDetail) => (
-          <>
-            <h2 className="service-detail-content-detail-header-text">
-              {serviceDetail.headerText}
-            </h2>
-            <div className="service-detail-content-detail-body">
-              <div className="service-detail-content-detail-body-package">
-                <Inventory2
-                  color="secondary"
-                  sx={{ width: "1rem", height: "1rem" }}
-                />
-                <span className="service-detail-content-detail-body-package-text">
-                  PACKAGE
-                </span>
-              </div>
-              <span className="service-detail-content-detail-body-description">
-                {serviceDetail.headerDescription}
-              </span>
-              <div className="service-detail-content-detail-body-package">
-                <Star
-                  color="secondary"
-                  sx={{ width: "1rem", height: "1rem" }}
-                />
-                <span className="service-detail-content-detail-body-package-text">
-                  {serviceDetail.rating}
-                </span>
-              </div>
-              <div className="service-detail-content-detail-body-info">
-                <span className="service-detail-content-detail-body-info-price">
-                  {serviceDetail.price}
-                </span>
-                <span className="service-detail-content-detail-body-info-time">
-                  {serviceDetail.time}
-                </span>
-              </div>
-              <Divider />
-              {serviceDetail.details.map((detail: ServiceDetailValue) => (
-                <div className="service-detail-content-detail-body-detail">
-                  *{" "}
-                  <span className="service-detail-content-detail-body-detail-key">
-                    {detail.key}
-                  </span>{" "}
-                  :{" "}
-                  <span className="service-detail-content-detail-body-detail-value">
-                    {detail.value}
-                  </span>
-                </div>
-              ))}
-              <button className="service-detail-content-detail-body-button">
-                <span className="service-detail-content-detail-body-button-text">
-                  Edit your package
-                </span>
-              </button>
-            </div>
-          </>
-        ))}
+        <div>
+          {ServiceDetailList.map((serviceDetail: ServicesDetail) => (
+            <ServiceDetailItems
+              serviceDetail={serviceDetail}
+              count={count}
+              decrementAddCount={decrementAddCount}
+              incrementAddCount={incrementAddCount}
+              incrementAddCountOnButtonClick={incrementAddCountOnButtonClick}
+              key={serviceDetail.id}
+            />
+          ))}
+        </div>
+        <ServicesDetailCart
+          count={count}
+          incrementAddCount={incrementAddCount}
+          decrementAddCount={decrementAddCount}
+          selectedServiceDetailList={selectedServiceDetailList}
+        />
       </div>
     </div>
   );

@@ -16,7 +16,10 @@ export default function ServicesAdvertisement({
       <span className="services-advertisement-text">{servicesName}</span>
       <div className="services-advertisement-carousel">
         {servicesOfferedList.map((servicesOffered: ServicesOffered) => (
-          <div className="services-advertisement-carousel-card">
+          <div
+            className="services-advertisement-carousel-card"
+            key={servicesOffered.productCost}
+          >
             <Image
               src={servicesOffered.productUrl}
               alt="power service ac service"

@@ -60,7 +60,10 @@ export default function ServiceContentLeft() {
         <div className="service-content-left-services-container">
           {SpecificServicesList.map(
             (specificServices: SpecificServicesOffered) => (
-              <div className="service-content-left-services-container-card">
+              <div
+                className="service-content-left-services-container-card"
+                key={specificServices.serviceText}
+              >
                 <Image
                   src={specificServices.serviceUrl}
                   alt="bestseller"
