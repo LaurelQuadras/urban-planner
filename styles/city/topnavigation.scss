@@ -17,6 +17,15 @@
 
   &-image {
     height: 2rem;
+    cursor: pointer;
+  }
+
+  &-location-dropdown {
+    font-size: 20px;
+    line-height: 28px;
+    color: rgb(84, 84, 84, 1);
+    font-weight: 600;
+    width: 15rem;
   }
 
   &-textfields {

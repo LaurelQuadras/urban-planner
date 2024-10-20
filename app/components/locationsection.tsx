@@ -8,13 +8,13 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LocationSection() {
-  const [locationValue, setLocationValue] = useState<string>("");
+  const router = useRouter();
 
   const handleChange = (event: SelectChangeEvent) => {
-    setLocationValue(event.target.value as string);
+    router.push("/" + event.target.value);
   };
 
   return (
@@ -45,14 +45,14 @@ export default function LocationSection() {
           </span>
           <FormControl>
             <InputLabel id="demo-simple-select-label">Location</InputLabel>
-            <Select
-              value={locationValue}
-              label="location"
-              onChange={handleChange}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+            <Select label="location" onChange={handleChange}>
+              <MenuItem value={"Barcelona"}>Barcelona</MenuItem>
+              <MenuItem value={"Madrid"}>Madrid</MenuItem>
+              <MenuItem value={"Seville"}>Seville</MenuItem>
+              <MenuItem value={"Valencia"}>Valencia</MenuItem>
+              <MenuItem value={"Malaga"}>Malaga</MenuItem>
+              <MenuItem value={"Cadiz"}>Cadiz</MenuItem>
+              <MenuItem value={"Huelva"}>Huelva</MenuItem>
             </Select>
           </FormControl>
         </div>
